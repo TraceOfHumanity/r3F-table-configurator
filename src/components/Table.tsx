@@ -1,6 +1,8 @@
 import {useGLTF} from "@react-three/drei";
 import {Mesh} from "three";
 import {useAppSelector} from "../hooks/useReduxToolkit";
+import { useEffect } from "react";
+import * as Three from "three";
 
 type GLTFResult = {
   nodes: {
@@ -23,7 +25,12 @@ export const Table = (props: any) => {
     "./models/Table.gltf"
   ) as unknown as GLTFResult;
 
-  const {legs} = useAppSelector((state) => state.table);
+  const {legs, legsColor} = useAppSelector((state) => state.table);
+
+  useEffect(() => {
+    materials.Metal.color = new Three.Color(legsColor);
+  }, [legsColor]);
+  
 
   return (
     <group {...props} dispose={null}>
