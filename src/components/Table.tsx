@@ -24,7 +24,6 @@ export const Table = (props: any) => {
   ) as unknown as GLTFResult;
 
   const {legs} = useAppSelector((state) => state.table);
-  console.log(legs);
 
   return (
     <group {...props} dispose={null}>

@@ -2,6 +2,7 @@ import {OrbitControls, Stage} from "@react-three/drei";
 import {Canvas} from "@react-three/fiber";
 import React from "react";
 import {Table} from "./components/Table";
+import { Interface } from "components/Interface";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           maxPolarAngle={Math.PI / 2}
         />
       </Canvas>
+      <Interface />
     </div>
   );
 }
