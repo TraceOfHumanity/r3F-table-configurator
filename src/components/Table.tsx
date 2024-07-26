@@ -1,5 +1,6 @@
 import {useGLTF} from "@react-three/drei";
 import {Mesh} from "three";
+import { useAppSelector } from "../hooks/useReduxToolkit";
 
 type GLTFResult = {
   nodes: {
@@ -22,9 +23,15 @@ export const Table = (props: any) => {
     "./models/Table.gltf"
   ) as unknown as GLTFResult;
 
+  // const {legs} = useAppSelector((state) => state.table);
+
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Plate.geometry} material={materials.Plate}  castShadow />
+      <mesh
+        geometry={nodes.Plate.geometry}
+        material={materials.Plate}
+        castShadow
+      />
       <mesh
         geometry={nodes.Legs01Left.geometry}
         material={materials.Metal}
