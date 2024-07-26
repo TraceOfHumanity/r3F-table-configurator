@@ -13,12 +13,12 @@ function App() {
           intensity={1.5}
           environment="city"
           shadows={{
-            type: "accumulative",
-            color: "#d9afd9",
-            colorBlend: 0,
-            opacity: 1,
+            type: "contact",
+            color: "#000000",
+            // colorBlend: 0,
+            // opacity: 1,
           }}
-          adjustCamera={2}
+          adjustCamera={1.5}
         >
           <Table />
         </Stage>
