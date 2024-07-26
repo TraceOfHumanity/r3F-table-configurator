@@ -15,9 +15,9 @@ export const RadioGroup: FC<RadioGroupProps> = ({
   onChange,
 }) => {
   return (
-    <label className="flex gap-2">
+    <div className="flex gap-2 items-center">
       <RadioBtn name={name} checked={checked} onChange={onChange} />
       <span className="text-lg font-bold">{label}</span>
-    </label>
+    </div>
   );
 };

@@ -2,14 +2,12 @@ import {OrbitControls, Stage} from "@react-three/drei";
 import {Canvas} from "@react-three/fiber";
 import React from "react";
 import {Table} from "./components/Table";
-import { Interface } from "components/Interface";
+import {Interface} from "components/Interface";
 
 function App() {
   return (
     <div className="h-screen w-screen">
       <Canvas className="" shadows camera={{position: [4, 4, -12], fov: 35}}>
-        {/* <ambientLight intensity={5} /> */}
-        {/* <pointLight position={[2, 1, 0]} intensity={10} /> */}
         <Stage
           intensity={1.5}
           environment="city"
