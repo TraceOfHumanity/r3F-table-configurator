@@ -1,6 +1,6 @@
 import {useGLTF} from "@react-three/drei";
 import {Mesh} from "three";
-import { useAppSelector } from "../hooks/useReduxToolkit";
+import {useAppSelector} from "../hooks/useReduxToolkit";
 
 type GLTFResult = {
   nodes: {
@@ -23,7 +23,8 @@ export const Table = (props: any) => {
     "./models/Table.gltf"
   ) as unknown as GLTFResult;
 
-  // const {legs} = useAppSelector((state) => state.table);
+  const {legs} = useAppSelector((state) => state.table);
+  console.log(legs);
 
   return (
     <group {...props} dispose={null}>
@@ -32,36 +33,48 @@ export const Table = (props: any) => {
         material={materials.Plate}
         castShadow
       />
-      <mesh
-        geometry={nodes.Legs01Left.geometry}
-        material={materials.Metal}
-        position={[-1.5, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.Legs01Right.geometry}
-        material={materials.Metal}
-        position={[1.5, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.Legs02Left.geometry}
-        material={materials.Metal}
-        position={[-1.5, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.Legs02Right.geometry}
-        material={materials.Metal}
-        position={[1.5, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.Legs03Right.geometry}
-        material={materials.Metal}
-        position={[1.5, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.Legs03Left.geometry}
-        material={materials.Metal}
-        position={[-1.5, 0, 0]}
-      />
+      {legs === 0 && (
+        <>
+          <mesh
+            geometry={nodes.Legs01Left.geometry}
+            material={materials.Metal}
+            position={[-1.5, 0, 0]}
+          />
+          <mesh
+            geometry={nodes.Legs01Right.geometry}
+            material={materials.Metal}
+            position={[1.5, 0, 0]}
+          />
+        </>
+      )}
+      {legs === 1 && (
+        <>
+          <mesh
+            geometry={nodes.Legs02Left.geometry}
+            material={materials.Metal}
+            position={[-1.5, 0, 0]}
+          />
+          <mesh
+            geometry={nodes.Legs02Right.geometry}
+            material={materials.Metal}
+            position={[1.5, 0, 0]}
+          />
+        </>
+      )}
+      {legs === 2 && (
+        <>
+          <mesh
+            geometry={nodes.Legs03Right.geometry}
+            material={materials.Metal}
+            position={[1.5, 0, 0]}
+          />
+          <mesh
+            geometry={nodes.Legs03Left.geometry}
+            material={materials.Metal}
+            position={[-1.5, 0, 0]}
+          />
+        </>
+      )}
     </group>
   );
 };
