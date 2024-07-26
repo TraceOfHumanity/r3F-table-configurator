@@ -1,18 +1,60 @@
-import { useGLTF } from "@react-three/drei";
-import { Mesh } from "three";
+import {useGLTF} from "@react-three/drei";
+import {Mesh} from "three";
+
+type GLTFResult = {
+  nodes: {
+    Plate: Mesh;
+    Legs01Left: Mesh;
+    Legs01Right: Mesh;
+    Legs02Left: Mesh;
+    Legs02Right: Mesh;
+    Legs03Right: Mesh;
+    Legs03Left: Mesh;
+  };
+  materials: {
+    Plate: any;
+    Metal: any;
+  };
+};
 
 export const Table = (props: any) => {
-  const { nodes, materials } = useGLTF("./models/Table.gltf") as any;
-
-  // Assert the type of nodes.Plate as Mesh
-  const plateMesh = nodes.Plate as Mesh;
-  
+  const {nodes, materials} = useGLTF(
+    "./models/Table.gltf"
+  ) as unknown as GLTFResult;
 
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={plateMesh.geometry} material={materials.Plate} />
-      {/* <mesh geometry={plateMesh.Legs01Left.geometry} material={materials.Metal} /> */}
-      
+      <mesh geometry={nodes.Plate.geometry} material={materials.Plate}  castShadow />
+      <mesh
+        geometry={nodes.Legs01Left.geometry}
+        material={materials.Metal}
+        position={[-1.5, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.Legs01Right.geometry}
+        material={materials.Metal}
+        position={[1.5, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.Legs02Left.geometry}
+        material={materials.Metal}
+        position={[-1.5, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.Legs02Right.geometry}
+        material={materials.Metal}
+        position={[1.5, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.Legs03Right.geometry}
+        material={materials.Metal}
+        position={[1.5, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.Legs03Left.geometry}
+        material={materials.Metal}
+        position={[-1.5, 0, 0]}
+      />
     </group>
   );
 };
