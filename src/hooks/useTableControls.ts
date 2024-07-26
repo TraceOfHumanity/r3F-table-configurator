@@ -1,4 +1,4 @@
-import {setLegs} from "../redux/slices/table";
+import {setLegs, setLegsColor} from "../redux/slices/table";
 import {useAppDispatch} from "./useReduxToolkit";
 
 export const useTableControls = () => {
@@ -8,5 +8,9 @@ export const useTableControls = () => {
     dispatch(setLegs(legs));
   };
 
-  return {changeLegsType};
+  const changeLegsColor = (color: string) => {
+    dispatch(setLegsColor(color));
+  };
+
+  return {changeLegsType, changeLegsColor};
 };
