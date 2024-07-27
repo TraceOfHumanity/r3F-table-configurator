@@ -47,12 +47,12 @@ export const Table = (props: any) => {
           <mesh
             geometry={nodes.Legs01Left.geometry}
             material={materials.Metal}
-            position={[-1.5, 0, 0]}
+            position={[-1.5 * tableWidthScale, 0, 0]}
           />
           <mesh
             geometry={nodes.Legs01Right.geometry}
             material={materials.Metal}
-            position={[1.5, 0, 0]}
+            position={[1.5 * tableWidthScale, 0, 0]}
           />
         </>
       )}
@@ -61,12 +61,12 @@ export const Table = (props: any) => {
           <mesh
             geometry={nodes.Legs02Left.geometry}
             material={materials.Metal}
-            position={[-1.5, 0, 0]}
+            position={[-1.5 * tableWidthScale, 0, 0]}
           />
           <mesh
             geometry={nodes.Legs02Right.geometry}
             material={materials.Metal}
-            position={[1.5, 0, 0]}
+            position={[1.5 * tableWidthScale, 0, 0]}
           />
         </>
       )}
@@ -75,12 +75,12 @@ export const Table = (props: any) => {
           <mesh
             geometry={nodes.Legs03Right.geometry}
             material={materials.Metal}
-            position={[1.5, 0, 0]}
+            position={[1.5 * tableWidthScale, 0, 0]}
           />
           <mesh
             geometry={nodes.Legs03Left.geometry}
             material={materials.Metal}
-            position={[-1.5, 0, 0]}
+            position={[-1.5 * tableWidthScale, 0, 0]}
           />
         </>
       )}
