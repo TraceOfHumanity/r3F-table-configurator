@@ -1,6 +1,5 @@
 import {OrbitControls, Stage} from "@react-three/drei";
 import {Canvas} from "@react-three/fiber";
-import React from "react";
 import {Table} from "./components/Table";
 import {Interface} from "components/Interface";
 
@@ -14,8 +13,6 @@ function App() {
           shadows={{
             type: "contact",
             color: "#000000",
-            // colorBlend: 0,
-            // opacity: 1,
           }}
           adjustCamera={1.5}
         >

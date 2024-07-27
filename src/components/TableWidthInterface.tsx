@@ -1,6 +1,5 @@
 import {useAppSelector} from "hooks/useReduxToolkit";
 import {useTableControls} from "hooks/useTableControls";
-import React from "react";
 import {GlassPanel} from "ui/GlassPanel";
 import {RangeInput} from "ui/RangeInput";
 
