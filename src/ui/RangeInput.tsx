@@ -13,6 +13,9 @@ export const RangeInput: FC<RangeInputProps> = ({
   value,
   onChange,
 }) => {
+
+  const percentage = ((value - min) / (max - min)) * 100;
+
   return (
     <input
       type="range"
@@ -20,9 +23,9 @@ export const RangeInput: FC<RangeInputProps> = ({
       max={max}
       value={value}
       onChange={(e) => onChange(Number(e.target.value))}
-      className="appearance-none rounded-2xl"
+      className="appearance-none rounded-2xl h-2"
       style={{
-        background: `linear-gradient(to right, #ff0000 0%, #ff0000 ${value}%, #e2e8f0 ${value}%, #e2e8f0 100%)`,
+        background: `linear-gradient(to right, #b2d9af 0%, #b2d9af ${percentage}%, #e2e8f0 ${percentage}%, #e2e8f0 100%)`,
       }}
     />
   );
