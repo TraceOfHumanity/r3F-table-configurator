@@ -8,16 +8,14 @@ export const TableWidthInterface = () => {
   const {changeTableWidth} = useTableControls();
   return (
     <GlassPanel>
-      <span>TableWidthInterface</span>
+      <h2>Table width</h2>
       <RangeInput
         min={50}
         max={200}
         value={tableWidth}
         onChange={(value) => changeTableWidth(value)}
       />
-      <h1>
-        {tableWidth}
-      </h1>
+      <h1>{tableWidth}</h1>
     </GlassPanel>
   );
 };

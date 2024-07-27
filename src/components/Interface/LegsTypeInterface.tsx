@@ -3,7 +3,7 @@ import {useAppSelector} from "hooks/useReduxToolkit";
 import {useTableControls} from "hooks/useTableControls";
 import React from "react";
 import {GlassPanel} from "ui/GlassPanel";
-import { RadioGroup } from "./RadioGroup";
+import { RadioGroup } from "../RadioGroup";
 
 export const LegsTypeInterface = () => {
   const {legs} = useAppSelector((state) => state.table);
@@ -11,6 +11,9 @@ export const LegsTypeInterface = () => {
 
   return (
     <GlassPanel>
+      <h2>
+        Legs type
+      </h2>
       {legsTypeInterfaceData.map((data) => (
         <RadioGroup
           key={data.label}
