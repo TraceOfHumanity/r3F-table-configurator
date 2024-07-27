@@ -25,7 +25,9 @@ export const Table = (props: any) => {
     "./models/Table.gltf"
   ) as unknown as GLTFResult;
 
-  const {legs, legsColor} = useAppSelector((state) => state.table);
+  const {legs, legsColor, tableWidth} = useAppSelector((state) => state.table);
+
+  const tableWidthScale = tableWidth / 100;
 
   useEffect(() => {
     materials.Metal.color = new Three.Color(legsColor);
@@ -38,6 +40,7 @@ export const Table = (props: any) => {
         geometry={nodes.Plate.geometry}
         material={materials.Plate}
         castShadow
+        scale={[tableWidthScale, 1, 1]}
       />
       {legs === 0 && (
         <>
